@@ -1,21 +1,33 @@
+import java.util.Collection;
 import java.util.Scanner;
-import java.util.Random;
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
 
-        Pessoa pessoa1 = new Pessoa(" ", 0.0, 0, 0);
+
+        ArrayList<Pessoa> clientes = new ArrayList<>();
         Scanner sc = new Scanner(System.in);
-        Random random1 = new Random();
-        String option = Menu.menu(sc);
+        String repetir = "";
 
-        if (option.equals("1")) {
-            Menu.cadastrarCliente(pessoa1, sc);
-        }
+        do {
 
-        System.out.print("Nome: " + pessoa1.getNome() + "\nCPF: " + pessoa1.getCpf() + "\nIdade: " + pessoa1.getIdade());
-        System.out.println("\nNumero aleatorio gerado: "+random1.nextInt(5));
+            String option = Menu.menu(sc);
 
+            if (option.equals("1")) {
+                Pessoa novaPessoa = new Pessoa("", 0.0, 0, "");
+                Menu.cadastrarCliente(novaPessoa, sc);
+                clientes.add(novaPessoa);
 
+            }
+
+            System.out.println("Deseja continuar?");
+            sc.nextLine();
+            repetir = sc.nextLine().toLowerCase();
+
+        } while (repetir.equals("s"));
+
+        System.out.print("Clientes cadastrados:\n");
+        
     }
 }
