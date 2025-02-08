@@ -12,7 +12,7 @@ public class Menu {
             System.out.println("\n1. Cadastrar cliente\n2. Depositar\n3. Sacar");
             meuMenu = sc.nextLine();
 
-            if (!!meuMenu.equals("1") && !!meuMenu.equals("2") && !!meuMenu.equals("3")) {
+            if (!!meuMenu.equals("1") && !!meuMenu.equals("2") && !!meuMenu.equals("3")) { //Comparação de valores de String
                 System.out.println("ERRO PVT");
             }
 
