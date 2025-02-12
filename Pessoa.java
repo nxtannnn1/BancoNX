@@ -6,9 +6,8 @@ public class Pessoa { //Atributos da classe Pessoa
     protected double saldo;
     protected int idade;
 
-    public Pessoa(String nome, double saldo, int idade, String cpf) { //Método construtor para inicializar atributos
+    public Pessoa(String nome, double saldo, int idade, String cpf) { //Construtor para inicializar atributos
         this.nome = nome;
-        this.idade = idade;
         this.saldo = saldo;
         this.cpf = cpf;
     }
@@ -24,7 +23,7 @@ public class Pessoa { //Atributos da classe Pessoa
             }
         } while (this.nome.length() > 100 || !this.nome.matches("[a-zA-Z]+"));
 
-        return this.nome;
+        return this.nome.substring(0, 1).toUpperCase().concat(this.nome.substring(1)); //Serve para deixar a primeira letra do nome maiúscula;
     }
 
     public int setIdade(Scanner sc) {
@@ -47,12 +46,12 @@ public class Pessoa { //Atributos da classe Pessoa
                 System.out.print("Quantidade de caracteres inválidos!\n\n");
             }
         } while (this.cpf.length() > 11);
-        return this.cpf;
+        return this.cpf.substring(0, 3) + "." + cpf.substring(3, 6) + "." + cpf.substring(6, 9) + "-" + cpf.substring(9, 11); //Serve para formatar e concatenar no formato de CPF
 
     }
 
     public String getNome() { //Getter
-        return this.nome.substring(0, 1).toUpperCase().concat(this.nome.substring(1)); //Serve para deixar a primeira letra do nome maiúscula
+        return this.nome;
     }
 
     public int getIdade() {
@@ -60,7 +59,15 @@ public class Pessoa { //Atributos da classe Pessoa
     }
 
     public String getCpf() {
-        return this.cpf.substring(0, 3) + "." + cpf.substring(3, 6) + "." + cpf.substring(6, 9) + "-" + cpf.substring(9, 11); //Serve para formatar e concatenar no formato de CPF
+        return this.cpf;
+    }
+
+    public double getSaldo() {
+        return this.saldo;
+    }
+
+    public void setSaldo(double saldoFinal){
+        this.saldo=saldoFinal;
     }
 
     public void verificarInvalidez() { //Em desenvolvimento
