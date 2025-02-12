@@ -4,10 +4,11 @@ import java.util.Scanner;
 public class Opcoes {
 
     Scanner sc = new Scanner(System.in);
-    Pessoa pessoa1 = new Pessoa(" ", 0.0, 0, "");
+    Pessoa pessoa1 = new Pessoa("", 0.0, 0, "");
 
-    public static String menu(Scanner sc) {
+    public static String exibirMenu(Scanner sc) {
         String meuMenu;
+
         do {
             System.out.println("\n1. Cadastrar clientes\n2. Visualizar clientes\n3. Investir dinheiro");
             meuMenu = sc.nextLine();
@@ -34,18 +35,16 @@ public class Opcoes {
         try {
             int i = 0;
             Pessoa p = clientes.get(i);
-            if (clientes.isEmpty()) {
-                System.out.println("bunda");
-            }
+
+            System.out.println("\nClientes cadastrados:\n\n");
 
             for (i = 0; i < clientes.size(); i++) {
                 System.out.println("ID: " + (i + 1) + "\nNome: " + p.getNome() + "\nIdade: " + p.getIdade() + "\nCPF: " + p.getCpf());
             }
 
         } catch (Exception e) {
-            System.out.println("Não foram cadastrados clientes! Retornando...");
+            System.out.println("\nNão foram cadastrados clientes! Retornando...");
         }
     }
-
 
 }

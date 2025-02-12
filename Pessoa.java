@@ -21,7 +21,8 @@ public class Pessoa { //Atributos da classe Pessoa
             if (this.nome.length() > 20 || !this.nome.matches("[a-zA-Z]+")) { //Não aceita mais de 20 caracteres ou números
                 System.out.print("Nome inválido!\n\n");
             }
-        } while (this.nome.length() > 100 || !this.nome.matches("[a-zA-Z]+"));
+
+        } while (this.nome.length() > 20 || !this.nome.matches("[a-zA-Z]+")); //Enquanto tiver mais de 20 caracteres ou possuir numeros, repete o laço
 
         return this.nome.substring(0, 1).toUpperCase().concat(this.nome.substring(1)); //Serve para deixar a primeira letra do nome maiúscula;
     }
@@ -66,8 +67,8 @@ public class Pessoa { //Atributos da classe Pessoa
         return this.saldo;
     }
 
-    public void setSaldo(double saldoFinal){
-        this.saldo=saldoFinal;
+    public void setSaldo(double saldoFinal) {
+        this.saldo = saldoFinal;
     }
 
     public void verificarInvalidez() { //Em desenvolvimento
