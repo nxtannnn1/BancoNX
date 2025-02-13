@@ -10,15 +10,15 @@ public class Opcoes {
         String meuMenu;
 
         do {
-            System.out.println("\n1. Cadastrar clientes\n2. Visualizar clientes\n3. Investir dinheiro");
+            System.out.println("\n1. Cadastrar clientes\n2. Visualizar clientes\n3. Investir dinheiro\n4. Sacar dinheiro");
             meuMenu = sc.nextLine();
 
-            if (!meuMenu.equals("1") && !meuMenu.equals("2") && !meuMenu.equals("3")) { //Comparação de valores de String
+            if (!meuMenu.equals("1") && !meuMenu.equals("2") && !meuMenu.equals("3") && !meuMenu.equals("4")) { //Comparação de valores de String
                 System.out.print("\nOpção inválida!\nAperte ENTER");
                 sc.nextLine();
             }
 
-        } while (!meuMenu.equals("1") && !meuMenu.equals("2") && !meuMenu.equals("3"));
+        } while (!meuMenu.equals("1") && !meuMenu.equals("2") && !meuMenu.equals("3") && !meuMenu.equals("4"));
 
         return meuMenu;
     }

@@ -39,9 +39,9 @@ public class Main {
             cadastro de clientes, saques e depósitos*/
 
             if (option.equals("1")) { //.equals serve para comparar valores de String
-                Pessoa novaPessoa = new Pessoa("", 500.0, 0, ""); //Inicialização do objeto Pessoa e seus atributos
-                clientes.add(novaPessoa); //Adição de pessoas na ArrayList para cadastro, começa em 0 e vai ao além
-                Opcoes.cadastrarCliente(novaPessoa, sc);//Finalizo o Cadastro
+                Pessoa pessoa = new Pessoa("", 500.0, 0, ""); //Inicialização do objeto Pessoa e seus atributos
+                clientes.add(pessoa); //Adição de pessoas na ArrayList para cadastro, começa em 0 e vai ao além
+                Opcoes.cadastrarCliente(pessoa, sc);//Finalizo o Cadastro
             }
 
             else if (option.equals("2")) {
@@ -49,10 +49,16 @@ public class Main {
             }
 
             else if (option.equals("3")) {
-                Dinheiro.investir(clientes);
+                Dinheiro.investirDinheiro(clientes);
+            }
+
+            else if (option.equals("4")) {
+                Dinheiro.sacarDinheiro(clientes, sc);
             }
 
             System.out.println("\nDeseja continuar?\n");
+
+
             repetir = sc.nextLine().toLowerCase(); //Transforma em minúsculo
 
         } while (repetir.equals("s"));

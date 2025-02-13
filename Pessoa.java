@@ -8,7 +8,8 @@ public class Pessoa { //Atributos da classe Pessoa
 
     public Pessoa(String nome, double saldo, int idade, String cpf) { //Construtor para inicializar atributos
         this.nome = nome;
-        this.saldo = saldo;
+        this.saldo = 500.0;
+        this.idade=idade;
         this.cpf = cpf;
     }
 
